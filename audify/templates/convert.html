@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{%block content%}
+    <div id="myid">
+    <h1>Video to Audio Converter</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.video.label }}
+            {{ form.video() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+    {% if audio_ready %}
+        <hr>
+        <h2>Download Converted Audio</h2>
+        <p>Click the button below to download the converted audio file.</p>
+        <a href="{{ url_for('download_audio', audio_filename=audio_filename) }}" class="btn" download="{{ audio_filename }}">Download {{ audio_filename }}</a>
+
+    </div>
+    {% endif %}
+{% endblock content%}

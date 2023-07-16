@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{%block content%}
+    
+    <div class="home">
+      <h2>Audify</h2>
+      <h3>Introducing Audify, the ultimate video-to-audio
+       converter designed to revolutionize your multimedia experience.
+        With Audify, you can effortlessly transform any video file into high-quality audio, providing 
+        you with flexibility and convenience like never before.</h3>
+
+        <a class="button1" id= "button1" href="{{ url_for('convert') }}">Convert Video to Audio</a>
+        
+        <a class="caption_button" id="captionButton" href="{{ url_for('caption_generator') }}">Caption_generator</a>
+        
+      </div>
+{% endblock content%}

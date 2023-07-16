@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{%block content%}
+
+    <div id="myid">
+    <h1>Caption_Generator </h1>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.audio.label }}
+            {{ form.audio() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+    {% if text_ready %}
+        <hr>
+        <h2>Download the subtitles</h2>
+        <p>Click the button below to download the captions file.</p>
+        <a href="{{ url_for('download_captions', text_filename=text_filename) }}" class="btn" download="{{ text_filename }}">Download {{ text_filename }}</a>
+
+        </div>
+
+    {% endif %}
+{% endblock content%}
